@@ -18,6 +18,7 @@ const startApplication = () => {
   const deleteMyItem = (id: string) => {
     appItemsList = appItemsList.filter((item) => item.id !== id);
     saveMyList(appItemsList);
+    renderParsedList();
   };
 
   const doCheckForItem = (id: string) => {
@@ -28,6 +29,7 @@ const startApplication = () => {
       return item;
     });
     saveMyList(appItemsList);
+    renderParsedList();
   };
 
   const saveMyList = (myList: ListItem[]): void => {
@@ -43,6 +45,9 @@ const startApplication = () => {
   const renderParsedList = (): void => {
     appItemsList = parseStoredList();
     listContainer.innerHTML = '';
+    if (appItemsList.length === 0) {
+      listContainer.innerHTML = '<li class="emptyList">Empty List...</li>';
+    }
     appItemsList.forEach((listItem: ListItem) => {
       const item = <HTMLLIElement>document.createElement('li');
       item.className = 'listItem';
@@ -86,7 +91,7 @@ const startApplication = () => {
     saveMyList(appItemsList);
   };
 
-  itemSubmit.addEventListener('click', () => {
+  const handleInputSubmit = () => {
     if (!itemInput.value) return;
 
     let itemId: string =
@@ -102,12 +107,19 @@ const startApplication = () => {
 
     addNewItem(newItem);
     itemInput.value = '';
+  };
+
+  itemSubmit.addEventListener('click', handleInputSubmit);
+  itemInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      handleInputSubmit();
+    }
   });
 
   window.addEventListener('load', () => {
     if (JSON.parse(localStorage.getItem('myList')!).length === 0) {
       saveMyList([]);
-      listContainer.innerHTML = '<p class="emptyList">Empty List...</p>';
+      listContainer.innerHTML = '<li class="emptyList">Empty List...</li>';
     } else {
       renderParsedList();
     }
