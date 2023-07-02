@@ -10,7 +10,6 @@
   --c-p: #232323;
   --c-s: #ffffff;
   --c-r: #ff5252;
-  --c-g: #83d683;
 
   --f-p: 'Alegreya Sans', sans-serif;
 }
@@ -131,7 +130,6 @@ li {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  flex-wrap: wrap;
   align-items: center;
   gap: 0.4rem;
   padding: 12px;
@@ -171,5 +169,4 @@ li {
 
 label.itemChecked {
   text-decoration: line-through;
-  color: var(--c-g);
 }
