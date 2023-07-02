@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToBeDoNE</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <h1>ToBeDoNE</h1>
+
+      <!-- Entry of List Form -->
+      <section class="listInput">
+        <input
+          type="text"
+          placeholder="Item to be added..."
+          class="inputPlace"
+        />
+        <button type="button" class="inputSubmit">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </section>
+
+      <!-- List Checkout -->
+      <section class="myList">
+        <h2>My List</h2>
+        <!-- List Container -->
+        <ul class="listContainer"></ul>
+      </section>
+    </main>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

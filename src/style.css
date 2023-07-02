@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --c-p: #232323;
+  --c-s: #ffffff;
+  --c-r: #ff5252;
+  --c-g: #83d683;
+
+  --f-p: 'Alegreya Sans', sans-serif;
+}
+
+li {
+  list-style-type: none;
+}
+
+.page {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 2rem;
+  background-color: var(--c-p);
+}
+
+.page h1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  font-family: var(--f-p);
+  color: var(--c-s);
+  letter-spacing: 0.5px;
+}
+
+.listInput {
+  width: 600px;
+  max-width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  padding: 12px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.listInput input {
+  width: 100%;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  background-color: var(--c-s);
+  padding: 8px 10px;
+  color: var(--c-p);
+  font-family: var(--f-p);
+  font-size: 20px;
+  letter-spacing: 0.3px;
+}
+
+.listInput button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--c-s);
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.listInput button ion-icon {
+  font-size: 20px;
+  color: var(--c-p);
+}
+
+.myList {
+  width: 600px;
+  max-width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.myList h2 {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+
+  font-family: var(--f-p);
+  color: var(--c-s);
+  letter-spacing: 0.5px;
+}
+
+.listContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  justify-content: flex-start;
+}
+
+.emptyList {
+  font-family: var(--f-p);
+  font-size: 22px;
+  color: var(--c-s);
+}
+
+.listItem {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 12px;
+  border: 1px solid var(--c-s);
+  border-radius: 4px;
+}
+
+.listItem button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.listItem button ion-icon {
+  font-size: 20px;
+  color: var(--c-r);
+}
+
+.listItem input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.listItem label {
+  width: 100%;
+  font-family: var(--f-p);
+  font-size: 20px;
+  color: var(--c-s);
+  user-select: none;
+  --webkit-user-select: none;
+  word-wrap: break-word;
+}
+
+label.itemChecked {
+  text-decoration: line-through;
+  color: var(--c-g);
+}
